@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Hives - Building Communities Together</title>
+    <meta name="description" content="Join Seven Hives to create, manage, and grow meaningful communities. Connect with like-minded individuals and build something amazing together.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="src/assets/lib/splide.min.css">
+    
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="./src/assets/css/output.css">
+   
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header id="header" class="header bg-red-500">
+        <nav class="navbar bg-red-500">
+            <div class="nav-container bg-red-500">
+                <div class="nav-brand">
+                    <a href="/" class="brand-logo">
+                        <img src="./src/assets/images/logo.svg" alt="Seven Hives" class="logo-img">
+                        <span class="brand-text">Seven Hives</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active" hx-get="/templates/home.html" hx-target="#main-content" hx-push-url="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link" hx-get="/templates/about.html" hx-target="#main-content" hx-push-url="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/features" class="nav-link" hx-get="/templates/features.html" hx-target="#main-content" hx-push-url="/features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/community" class="nav-link" hx-get="/templates/community.html" hx-target="#main-content" hx-push-url="/community">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link" hx-get="/templates/contact.html" hx-target="#main-content" hx-push-url="/contact">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="/login" class="btn btn-outline" hx-get="/templates/auth/login.html" hx-target="#main-content" hx-push-url="/login">Login</a>
+                    <a href="/signup" class="btn btn-primary" hx-get="/templates/auth/signup.html" hx-target="#main-content" hx-push-url="/signup">Get Started</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+           
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            
+        </section>
+
+        <!-- Community Showcase -->
+        <section id="community" class="community-section">
+           
+           
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+           
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+          
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/assets/lib/htmx.min.js"></script>
+    <script src="src/assets/lib/splide.min.js"></script>
+    <script src="src/assets/lib/anime.min.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>

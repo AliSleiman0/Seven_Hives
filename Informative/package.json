@@ -1,0 +1,36 @@
+{
+  "name": "seven-hives-informative",
+  "version": "1.0.0",
+  "description": "Seven Hives Informative Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server src --port=3000",
+    "build": "npm run copy-libs && npm run minify",
+    "copy-libs": "npm run copy-htmx && npm run copy-splide && npm run copy-anime",
+    "copy-htmx": "copy node_modules\\htmx.org\\dist\\htmx.min.js src\\assets\\lib\\",
+    "copy-splide": "copy node_modules\\@splidejs\\splide\\dist\\js\\splide.min.js src\\assets\\lib\\ && copy node_modules\\@splidejs\\splide\\dist\\css\\splide.min.css src\\assets\\lib\\",
+    "copy-anime": "copy node_modules\\animejs\\lib\\anime.min.js src\\assets\\lib\\",
+    "minify": "echo 'Minification setup needed'",
+    "serve": "live-server src"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@tailwindcss/cli": "^4.1.17",
+    "animejs": "^3.2.1",
+    "htmx.org": "^1.9.6",
+    "tailwindcss": "^4.1.17"
+  },
+  "keywords": [
+    "seven-hives",
+    "community",
+    "website",
+    "htmx",
+    "splide",
+    "anime"
+  ],
+  "author": "Seven Hives Team",
+  "license": "MIT"
+}
