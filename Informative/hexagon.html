@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Test - Seven Hives</title>
+    
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="src/assets/lib/splide.min.css">
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./src/assets/css/output.css">
+    
+    <style>
+        .hexagon-bg {
+            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+          
+        }
+        
+        .hexagon-shape {
+            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+        }
+        
+        .hexagon-border-wrapper {
+            position: relative;
+            width: fit-content;
+            padding: 6px;
+        }
+        
+        .hexagon-border-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #f0d174; /* yellow-300 */
+            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+            z-index: 0;
+        }
+        
+        .hexagon-border-wrapper .hexagon-shape {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hexagon-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%);
+            z-index: 1;
+        }
+        
+        .hexagon-shape .absolute {
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    
+    <!-- Hexagon Carousel -->
+    <div class="container mx-auto px-4 py-16  ">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">Hexagon Services</h1>
+        
+        <div class="splide h-fit py-16" id="hexagon-carousel">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <!-- Hexagon 1 -->
+                    <li class="splide__slide">
+                        <div class="flex justify-center items-center p-12">
+                            <div class="hexagon-border-wrapper">
+                                <div class="relative w-64 h-64 hexagon-shape cursor-pointer" style="background-image: url('./src/assets/images/hexCarousel.jpg'); background-size: cover; background-position: center;">
+                                    <div class="hexagon-overlay"></div>
+                                    <div class="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold p-8 text-center">
+                                        IT Infrastructure Management
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Hexagon 2 -->
+                    <li class="splide__slide">
+                        <div class="flex justify-center items-center p-12">
+                            <div class="hexagon-border-wrapper">
+                                <div class="relative w-64 h-64 hexagon-shape cursor-pointer" style="background-image: url('./src/assets/images/hexCarousel.jpg'); background-size: cover; background-position: center;">
+                                    <div class="hexagon-overlay"></div>
+                                    <div class="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold p-8 text-center">
+                                        Cloud Solutions
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Hexagon 3 -->
+                    <li class="splide__slide">
+                        <div class="flex justify-center items-center p-12">
+                            <div class="hexagon-border-wrapper">
+                                <div class="relative w-64 h-64 hexagon-shape cursor-pointer" style="background-image: url('./src/assets/images/hexCarousel.jpg'); background-size: cover; background-position: center;">
+                                    <div class="hexagon-overlay"></div>
+                                    <div class="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold p-8 text-center">
+                                        Cybersecurity
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Hexagon 4 -->
+                    <li class="splide__slide">
+                        <div class="flex justify-center items-center p-12">
+                            <div class="hexagon-border-wrapper">
+                                <div class="relative w-64 h-64 hexagon-shape cursor-pointer" style="background-image: url('./src/assets/images/hexCarousel.jpg'); background-size: cover; background-position: center;">
+                                    <div class="hexagon-overlay"></div>
+                                    <div class="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold p-8 text-center">
+                                        Network Support
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Hexagon 5 -->
+                    <li class="splide__slide">
+                        <div class="flex justify-center items-center p-12">
+                            <div class="hexagon-border-wrapper">
+                                <div class="relative w-64 h-64 hexagon-shape cursor-pointer" style="background-image: url('./src/assets/images/hexCarousel.jpg'); background-size: cover; background-position: center;">
+                                    <div class="hexagon-overlay"></div>
+                                    <div class="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold p-8 text-center">
+                                        Data Backup
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Hexagon 6 -->
+                    <li class="splide__slide">
+                        <div class="flex justify-center items-center p-12">
+                            <div class="hexagon-border-wrapper">
+                                <div class="relative w-64 h-64 hexagon-shape cursor-pointer" style="background-image: url('./src/assets/images/hexCarousel.jpg'); background-size: cover; background-position: center;">
+                                    <div class="hexagon-overlay"></div>
+                                    <div class="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold p-8 text-center">
+                                        Tech Consulting
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="src/assets/lib/splide.min.js"></script>
+    <script src="src/assets/lib/anime.min.js"></script>
+    
+    <script>
+        // Initialize Splide Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = new Splide('#hexagon-carousel', {
+                type: 'loop',
+                perPage: 3,
+                perMove: 1,
+                autoplay: true,
+                interval: 3000,
+                speed: 1200,
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                gap: '2rem',
+                pagination: false,
+                arrows: false,
+                focus: 'center',
+                trimSpace: false,
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                    },
+                    640: {
+                        perPage: 1,
+                    }
+                }
+            });
+            
+            carousel.mount();
+            
+            // Function to animate cards based on position
+            function animateCards() {
+                const track = document.querySelector('.splide__track');
+                const trackRect = track.getBoundingClientRect();
+                const centerX = trackRect.left + trackRect.width / 2;
+                
+                const slides = document.querySelectorAll('.splide__slide');
+                
+                slides.forEach(slide => {
+                    const wrapper = slide.querySelector('.hexagon-border-wrapper');
+                    if (!wrapper) return;
+                    
+                    const slideRect = slide.getBoundingClientRect();
+                    const slideCenterX = slideRect.left + slideRect.width / 2;
+                    
+                    // Calculate distance from center
+                    const distance = Math.abs(centerX - slideCenterX);
+                    const maxDistance = trackRect.width / 3; // Distance from center to edge of visible area
+                    
+                    // Normalize distance (0 at center, 1 at edge)
+                    const normalizedDistance = Math.min(distance / maxDistance, 1);
+                    
+                    // Calculate scale: 1.3 at center, gradually down to 1.0
+                    const scale = 1.3 - (normalizedDistance * 0.3);
+                    
+                    // Apply smooth animation
+                    anime({
+                        targets: wrapper,
+                        scale: scale,
+                        duration: 300,
+                        easing: 'easeOutCubic'
+                    });
+                });
+            }
+            
+            // Update continuously during movement
+            let animationFrame;
+            function updateAnimation() {
+                animateCards();
+                animationFrame = requestAnimationFrame(updateAnimation);
+            }
+            
+            // Start animation loop when carousel moves
+            carousel.on('move', function() {
+                if (!animationFrame) {
+                    updateAnimation();
+                }
+            });
+            
+            // Stop animation loop when movement completes
+            carousel.on('moved', function() {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                    animationFrame = null;
+                }
+                animateCards(); // Final position update
+            });
+            
+            // Initial animation for all cards
+            setTimeout(() => {
+                const initialSlides = document.querySelectorAll('.splide__slide.is-active .hexagon-border-wrapper');
+                anime({
+                    targets: initialSlides,
+                    scale: [0, 1],
+                    opacity: [0, 1],
+                    duration: 800,
+                    delay: anime.stagger(100),
+                    easing: 'easeOutElastic(1, .8)',
+                    complete: function() {
+                        // After initial animation, apply center card scaling
+                        animateCards();
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

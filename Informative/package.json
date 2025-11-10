@@ -4,6 +4,7 @@
   "description": "Seven Hives Informative Website",
   "main": "index.html",
   "scripts": {
+    "watch": "npx @tailwindcss/cli -i ./src/assets/css/main.css -o ./src/assets/css/output.css --watch",
     "dev": "live-server src --port=3000",
     "build": "npm run copy-libs && npm run minify",
     "copy-libs": "npm run copy-htmx && npm run copy-splide && npm run copy-anime",

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Hives - Building Communities Together</title>
+    <meta name="description" content="Join Seven Hives to create, manage, and grow meaningful communities. Connect with like-minded individuals and build something amazing together.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="src/assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="src/assets/lib/splide.min.css">
+    
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="./src/assets/css/output.css">
+   
+</head>
+<body >
+   
+    <!-- Navigation Header -->
+    <header id="header" class=" top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <!-- Logo -->
+                <div class="shrink-0">
+                    <a href="/" class="">
+                        <img src="./src/assets/images/logo.png" alt="Seven Hives" class="w-25 h-25 object-contain">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li>
+                        <a href="/" class="text-black hover:text-yellow-400 active:text-yellow-500 font-medium transition-colors duration-200" hx-get="/templates/home.html" hx-target="#main-content" hx-push-url="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about" class="text-black hover:text-yellow-400 active:text-yellow-500 font-medium transition-colors duration-200" hx-get="/templates/about.html" hx-target="#main-content" hx-push-url="/about">About us</a>
+                    </li>
+                    <li>
+                        <a href="/features" class="text-black hover:text-yellow-400 active:text-yellow-500 font-medium transition-colors duration-200" hx-get="/templates/features.html" hx-target="#main-content" hx-push-url="/features">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="/community" class="text-black hover:text-yellow-400 active:text-yellow-500 font-medium transition-colors duration-200" hx-get="/templates/community.html" hx-target="#main-content" hx-push-url="/community">Help & Support</a>
+                    </li>
+                    <li>
+                        <a href="/contact" class="px-4 py-2 bg-primary-600 text-black rounded-lg hover:bg-primary-700 active:bg-primary-800 font-medium transition-colors duration-200" hx-get="/templates/contact.html" hx-target="#main-content" hx-push-url="/contact">Dashboard</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-toggle" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="/" class="block px-4 py-2 text-black hover:bg-gray-100/20 hover:text-yellow-400 active:text-yellow-500 rounded-lg font-medium transition-colors duration-200" hx-get="/templates/home.html" hx-target="#main-content" hx-push-url="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about" class="block px-4 py-2 text-black hover:bg-gray-100/20 hover:text-yellow-400 active:text-yellow-500 rounded-lg font-medium transition-colors duration-200" hx-get="/templates/about.html" hx-target="#main-content" hx-push-url="/about">About us</a>
+                    </li>
+                    <li>
+                        <a href="/features" class="block px-4 py-2 text-black hover:bg-gray-100/20 hover:text-yellow-400 active:text-yellow-500 rounded-lg font-medium transition-colors duration-200" hx-get="/templates/features.html" hx-target="#main-content" hx-push-url="/features">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="/community" class="block px-4 py-2 text-black hover:bg-gray-100/20 hover:text-yellow-400 active:text-yellow-500 rounded-lg font-medium transition-colors duration-200" hx-get="/templates/community.html" hx-target="#main-content" hx-push-url="/community">Help & Support</a>
+                    </li>
+                    <li>
+                        <a href="/contact" class="block px-4 py-2 bg-primary-600 text-black rounded-lg hover:bg-primary-700 active:bg-primary-800 font-medium text-center transition-colors duration-200" hx-get="/templates/contact.html" hx-target="#main-content" hx-push-url="/contact">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Contact Us Section -->
+    <section class="bg-white py-16 px-4 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <!-- Decorative Hexagons -->
+            <div class="absolute top-10 left-10 w-20 h-20 opacity-30">
+                <svg viewBox="0 0 100 100" class="text-blue-500">
+                    <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="3"/>
+                </svg>
+            </div>
+            <div class="absolute top-20 right-20 w-24 h-24 opacity-40">
+                <svg viewBox="0 0 100 100" class="text-yellow-400">
+                    <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="3"/>
+                </svg>
+            </div>
+            <div class="absolute top-40 left-1/2 -translate-x-1/2 w-16 h-16 opacity-30">
+                <svg viewBox="0 0 100 100" class="text-yellow-400">
+                    <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </div>
+
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 relative z-10">
+                Connect With Us For
+                <span class="text-yellow-400">Inquiries</span>,
+                <span class="text-yellow-400">Support</span>,
+                <br>Or <span class="text-yellow-400">Collaboration</span> Opportunities.
+            </h2>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center mb-12 relative z-10">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-colors">
+                    Submit A Ticket
+                </button>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="relative">
+                <!-- More Decorative Hexagons around card -->
+                <div class="absolute bottom-20 -left-12 w-32 h-32 opacity-20">
+                    <svg viewBox="0 0 100 100" class="text-blue-400">
+                        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="absolute -bottom-8 -right-12 w-28 h-28 opacity-30">
+                    <svg viewBox="0 0 100 100" class="text-blue-500">
+                        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="absolute top-8 -right-8 w-20 h-20 opacity-30">
+                    <svg viewBox="0 0 100 100" class="text-yellow-400">
+                        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <!-- Main Card -->
+                <div class="bg-gray-50 rounded-3xl shadow-lg px-8 py-10 flex flex-col md:flex-row gap-12 relative z-10">
+                    <!-- Left Side: Info & Live Support -->
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <p class="text-gray-700 text-lg">
+                                Fill up the form and our team will<br>get back to you within<br>
+                                <span class="text-yellow-400 font-bold">24 hours.</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 mt-8">
+                            <span class="text-gray-900 font-semibold text-lg">Live Support</span>
+                            <div class="w-10 h-10 rounded-full border-2 border-blue-400 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Contact Form -->
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Contact Us</h3>
+                        <p class="text-gray-600 text-sm mb-6">We're here to assist you with reliable solutions and timely support.</p>
+                        
+                        <form class="space-y-4">
+                            <div class="flex gap-4">
+                                <input 
+                                    type="text" 
+                                    placeholder="First name" 
+                                    class="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500 text-sm"
+                                />
+                                <input 
+                                    type="text" 
+                                    placeholder="Last name" 
+                                    class="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500 text-sm"
+                                />
+                            </div>
+                            <input 
+                                type="email" 
+                                placeholder="Email" 
+                                class="w-full px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500 text-sm"
+                            />
+                            <textarea 
+                                placeholder="Message" 
+                                rows="5" 
+                                class="w-full px-5 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:border-blue-500 resize-none text-sm"
+                            ></textarea>
+                            <div class="flex justify-center">
+                            <button 
+                                type="submit" 
+                                class="w-1/2 mx-auto bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-colors"
+                            >
+                                Send Message
+                            </button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Footer Grid -->
+            <div class="flex flex-col lg:flex-row gap-12 mb-8">
+                <!-- Left Side: Links Grid -->
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- First Row -->
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-4">Services</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Web Development</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">App Development</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Cloud Solutions</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Cybersecurity</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">IT Consulting</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-4">Useful Links</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">About Us</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">FAQs</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-4">Resources</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Blog</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Case Studies</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Documentation</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">API Reference</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Help Center</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-4">Company</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Careers</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Press</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Partnerships</a></li>
+                            <li><a href="#" class="hover:text-blue-500 transition-colors">Partnerships</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Side: Subscribe Box  bg-[#203C860D] -->
+                <div class="lg:w-80 flex flex-col justify-center ">
+                    <h3 class="font-bold text-gray-900 mb-4">Subscribe</h3>
+                    <form class="mb-4">
+                        <div class="relative">
+                            <input 
+                                type="email" 
+                                placeholder="Email" 
+                                class="w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-blue-500"
+                            />
+                            <button 
+                                type="submit" 
+                                class="absolute right-1 top-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                            >
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-sm text-gray-600 mb-6">
+                        At SEven Hives, our mission is to transform technology into meaningful connections between companies, clients, and communities.
+                    </p>
+                    <!-- Social Icons -->
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full   flex items-center justify-center hover:bg-blue-50 transition-colors">
+                            <img src="./src/assets/images/facebook.png" class="w-10 h-10"/>
+                        </a>
+                         <a href="#" class="w-10 h-10 rounded-full   flex items-center justify-center hover:bg-blue-50 transition-colors">
+                            <img src="./src/assets/images/twitter.png" class="w-10 h-10"/>
+                        </a>
+                         <a href="#" class="w-10 h-10 rounded-full   flex items-center justify-center hover:bg-blue-50 transition-colors">
+                            <img src="./src/assets/images/linkedin.png" class="w-10 h-10"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-300 pt-6 text-center">
+                <p class="text-gray-600 text-sm">© 2026 SEven Hives. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/assets/lib/htmx.min.js"></script>
+    <script src="src/assets/lib/splide.min.js"></script>
+    <script src="src/assets/lib/anime.min.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
