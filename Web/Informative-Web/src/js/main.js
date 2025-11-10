@@ -260,3 +260,283 @@ document.addEventListener('DOMContentLoaded', function() {
         }).mount();
     }
 });
+
+// Scroll Animations with Anime.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Set to keep track of animated elements
+    const animatedElements = new Set();
+    
+    // Hide all animatable elements initially
+    const animatableSelectors = [
+        'section:not(header):not(footer)',
+        'h1:not(header *):not(footer *)',
+        'h2:not(header *):not(footer *)',
+        'h3:not(header *):not(footer *)',
+        'p:not(header *):not(footer *)',
+        'button:not(header *):not(footer *)',
+        '.grid > div:not(header *):not(footer *)',
+        'input:not(header *):not(footer *)',
+        'textarea:not(header *):not(footer *)',
+        'footer h3',
+        'footer ul',
+        'footer p',
+        'footer form',
+        'footer .flex.gap-3',
+        'img:not(header *):not(.w-25)',
+        '.hexagon-shape'
+    ];
+    
+    animatableSelectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+            if (!el.classList.contains('animated')) {
+                el.style.opacity = '0';
+            }
+        });
+    });
+    
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const elementHeight = rect.height;
+        
+        // Element is considered in viewport when 20% of it is visible
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        const visiblePercentage = (visibleHeight / elementHeight) * 100;
+        
+        return visiblePercentage >= 20;
+    }
+    
+    // Function to animate elements from sides
+    function animateOnScroll() {
+        // Animate sections
+        const sections = document.querySelectorAll('section:not(.animated):not(header):not(footer)');
+        sections.forEach((section, index) => {
+            if (isInViewport(section) && !animatedElements.has(section)) {
+                section.classList.add('animated');
+                animatedElements.add(section);
+                
+                anime({
+                    targets: section,
+                    opacity: [0, 1],
+                    translateY: [50, 0],
+                    duration: 800,
+                    delay: 100,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        // Animate headings from left (exclude header and footer)
+        const headings = document.querySelectorAll('h1:not(.animated):not(header *):not(footer *), h2:not(.animated):not(header *):not(footer *), h3:not(.animated):not(header *):not(footer *)');
+        headings.forEach((heading) => {
+            if (isInViewport(heading) && !animatedElements.has(heading)) {
+                heading.classList.add('animated');
+                animatedElements.add(heading);
+                
+                anime({
+                    targets: heading,
+                    opacity: [0, 1],
+                    translateX: [-100, 0],
+                    duration: 1000,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        // Animate paragraphs from right (exclude header and footer)
+        const paragraphs = document.querySelectorAll('p:not(.animated):not(header *):not(footer *)');
+        paragraphs.forEach((paragraph) => {
+            if (isInViewport(paragraph) && !animatedElements.has(paragraph)) {
+                paragraph.classList.add('animated');
+                animatedElements.add(paragraph);
+                
+                anime({
+                    targets: paragraph,
+                    opacity: [0, 1],
+                    translateX: [50, 0],
+                    duration: 1000,
+                    delay: 200,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        // Animate buttons from bottom (exclude header and footer)
+        const buttons = document.querySelectorAll('button:not(.animated):not(header *):not(footer *), a:not(header *):not(footer *) button:not(.animated)');
+        buttons.forEach((button) => {
+            if (isInViewport(button) && !animatedElements.has(button)) {
+                button.classList.add('animated');
+                animatedElements.add(button);
+                
+                anime({
+                    targets: button,
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    scale: [0.9, 1],
+                    duration: 600,
+                    delay: 400,
+                    easing: 'easeOutElastic(1, .6)'
+                });
+            }
+        });
+        
+        // Animate cards/team members from bottom with stagger (exclude header and footer)
+        const cards = document.querySelectorAll('.grid > div:not(.animated):not(header *):not(footer *)');
+        cards.forEach((card, index) => {
+            if (isInViewport(card) && !animatedElements.has(card)) {
+                card.classList.add('animated');
+                animatedElements.add(card);
+                
+                anime({
+                    targets: card,
+                    opacity: [0, 1],
+                    translateY: [60, 0],
+                    duration: 800,
+                    delay: index * 100,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        // Animate form inputs from left (exclude header and footer)
+        const inputs = document.querySelectorAll('input:not(.animated):not(header *):not(footer *), textarea:not(.animated):not(header *):not(footer *)');
+        inputs.forEach((input, index) => {
+            if (isInViewport(input) && !animatedElements.has(input)) {
+                input.classList.add('animated');
+                animatedElements.add(input);
+                
+                anime({
+                    targets: input,
+                    opacity: [0, 1],
+                    translateX: [-50, 0],
+                    duration: 600,
+                    delay: index * 80,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        // Animate footer sections from bottom
+        const footerHeadings = document.querySelectorAll('footer h3:not(.animated)');
+        footerHeadings.forEach((heading, index) => {
+            if (isInViewport(heading) && !animatedElements.has(heading)) {
+                heading.classList.add('animated');
+                animatedElements.add(heading);
+                
+                anime({
+                    targets: heading,
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    duration: 600,
+                    delay: index * 100,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        const footerLists = document.querySelectorAll('footer ul:not(.animated)');
+        footerLists.forEach((list, index) => {
+            if (isInViewport(list) && !animatedElements.has(list)) {
+                list.classList.add('animated');
+                animatedElements.add(list);
+                
+                anime({
+                    targets: list,
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    duration: 600,
+                    delay: index * 100 + 200,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        const footerParagraphs = document.querySelectorAll('footer p:not(.animated)');
+        footerParagraphs.forEach((p, index) => {
+            if (isInViewport(p) && !animatedElements.has(p)) {
+                p.classList.add('animated');
+                animatedElements.add(p);
+                
+                anime({
+                    targets: p,
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    duration: 600,
+                    delay: index * 100 + 300,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        const footerForms = document.querySelectorAll('footer form:not(.animated)');
+        footerForms.forEach((form, index) => {
+            if (isInViewport(form) && !animatedElements.has(form)) {
+                form.classList.add('animated');
+                animatedElements.add(form);
+                
+                anime({
+                    targets: form,
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    duration: 600,
+                    delay: index * 100 + 200,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        const footerSocial = document.querySelectorAll('footer .flex.gap-3:not(.animated)');
+        footerSocial.forEach((social, index) => {
+            if (isInViewport(social) && !animatedElements.has(social)) {
+                social.classList.add('animated');
+                animatedElements.add(social);
+                
+                anime({
+                    targets: social,
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    duration: 600,
+                    delay: index * 100 + 400,
+                    easing: 'easeOutCubic'
+                });
+            }
+        });
+        
+        // Animate images and hexagons (exclude header logos)
+        const images = document.querySelectorAll('img:not(.animated):not(header *):not(.w-25), .hexagon-shape:not(.animated)');
+        images.forEach((img) => {
+            if (isInViewport(img) && !animatedElements.has(img)) {
+                img.classList.add('animated');
+                animatedElements.add(img);
+                
+                anime({
+                    targets: img,
+                    opacity: [0, 1],
+                    scale: [0.8, 1],
+                    duration: 1000,
+                    easing: 'easeOutElastic(1, .8)'
+                });
+            }
+        });
+    }
+    
+    // Initial check on page load
+    setTimeout(animateOnScroll, 100);
+    
+    // Check on scroll with throttling
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = window.requestAnimationFrame(function() {
+            animateOnScroll();
+        });
+    });
+    
+    // Also check on resize
+    window.addEventListener('resize', animateOnScroll);
+});
