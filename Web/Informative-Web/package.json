@@ -7,11 +7,8 @@
     "watch": "npx @tailwindcss/cli -i ./src/assets/css/main.css -o ./src/assets/css/output.css --watch",
     "dev": "live-server src --port=3000",
     "build": "npm run copy-libs && npm run minify",
-    "copy-libs": "npm run copy-htmx && npm run copy-splide && npm run copy-anime",
-    "copy-htmx": "copy node_modules\\htmx.org\\dist\\htmx.min.js src\\assets\\lib\\",
-    "copy-splide": "copy node_modules\\@splidejs\\splide\\dist\\js\\splide.min.js src\\assets\\lib\\ && copy node_modules\\@splidejs\\splide\\dist\\css\\splide.min.css src\\assets\\lib\\",
-    "copy-anime": "copy node_modules\\animejs\\lib\\anime.min.js src\\assets\\lib\\",
-    "minify": "echo 'Minification setup needed'",
+    "copy-libs": "mkdir -p src/assets/lib && cp node_modules/htmx.org/dist/htmx.min.js src/assets/lib/ && cp node_modules/@splidejs/splide/dist/js/splide.min.js src/assets/lib/ && cp node_modules/@splidejs/splide/dist/css/splide.min.css src/assets/lib/ && cp node_modules/animejs/lib/anime.min.js src/assets/lib/",
+    "minify": "npx @tailwindcss/cli -i ./src/assets/css/main.css -o ./src/assets/css/output.css --minify",
     "serve": "live-server src"
   },
   "devDependencies": {
